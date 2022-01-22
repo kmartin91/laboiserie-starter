@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar />
     <p>Accessoires</p>
     <ul>
       <li v-for="a in accessories.pageProps.products">{{ a.node.name }} {{ a.node.thumbnail.url }}</li>
