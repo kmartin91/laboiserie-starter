@@ -232,21 +232,21 @@
       <div class="showcase__wrapper">
         <div class="showcase__infos">
           <div class="showcase__infos__title">
-            <span>Pull brodé</span>
-            <span>3 coloris</span>
+            <span>Doudoune officielle</span>
+            <span>"Lulu"</span>
           </div>
           <a href="#" class="showcase__infos__cta"> Découvrir </a>
         </div>
         <div class="showcase__image">
           <img
-            src="https://cdn.discordapp.com/attachments/928410144193282053/934611407587127306/product2.jpg"
+            src="https://cdn.discordapp.com/attachments/714699881679290391/934915679038087278/boiserieveste.jpg"
             alt=""
           />
         </div>
       </div>
     </section>
 
-    <Products />
+<!--    <Products />-->
     <Youtube />
 
     <Footer />

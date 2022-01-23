@@ -4,9 +4,15 @@
   background-color: #dbdedb;
 
   &.showcase {
+
+  }
+
+  &-1 {
     .showcase__infos__title {
       font-family: "Great Vibes", cursive;
+    }
 
+    .showcase__infos__title {
       span {
         display: block;
         padding: 0 15px;
@@ -17,14 +23,40 @@
       }
     }
   }
+
   &-2 {
     color: #fff;
-    background: #ac0123;
+    background: #33302d;
+
     .showcase__wrapper {
       flex-direction: row-reverse;
     }
+
     .showcase__infos__title {
       color: #fff;
+      font-size: 48px;
+      margin-bottom: 15px;
+      line-height: 1.1;
+
+      span:last-child {
+        text-align: center;
+        display: block;
+        margin-left: 0;
+        font-style: italic;
+        font-weight: 400;
+      }
+    }
+
+    .showcase__infos__cta {
+      background-color: #fff;
+      border: 2px solid #fff;
+      color: #000;
+
+      &:hover {
+        background-color: #000;
+        border: 2px solid #000;
+        color: #fff;
+      }
     }
   }
 }

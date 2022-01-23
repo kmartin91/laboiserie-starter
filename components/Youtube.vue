@@ -1,7 +1,7 @@
 <template>
   <section class="last-youtube-video">
     <div class="last-youtube-video__video-wrapper">
-      <h2 class="last-youtube-video__title">Ma dernière vidéo :</h2>
+      <h2 class="last-youtube-video__title">Ma dernière vidéo</h2>
       <iframe
         width="560"
         height="315"

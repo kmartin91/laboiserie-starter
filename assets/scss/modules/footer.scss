@@ -1,6 +1,7 @@
 // Footer variables
 $footerBg: #000;
 $footerText: #fff;
+
 .container {
   width: 100%;
   max-width: 1600px;
@@ -16,6 +17,8 @@ $footerText: #fff;
   &__columns {
     display: flex;
     justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
   }
 
   &__col {
@@ -29,6 +32,12 @@ $footerText: #fff;
       * ~ span {
         margin-left: 1rem;
       }
+    }
+  }
+
+  &__etienne {
+    path {
+      fill: #1a1a1a !important;
     }
   }
 
@@ -58,6 +67,7 @@ $footerText: #fff;
 
     p {
       display: flex;
+      justify-content: center;
 
       a {
         margin-left: 0.5rem;

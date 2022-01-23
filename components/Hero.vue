@@ -10,8 +10,8 @@
 
     <div class="hero__wrapper">
       <div class="hero__wrapper__content">
-        <h1 class="hero__title">Des vêtements fabriqués <b>en France</b></h1>
-        <a class="hero__button" href="#"> Boutique </a>
+        <h1 class="hero__title">Une lamborghini et une ferrari <b>à gagner</b></h1>
+        <a class="hero__button" href="#">Participer</a>
       </div>
     </div>
   </section>

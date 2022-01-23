@@ -1,15 +1,17 @@
 <template>
   <section class="products">
     <div class="cards_wrapper">
-      <h2 class="product_title">Products</h2>
+      <h2 class="product_title">Nos <b>nouveaux produits</b></h2>
       <div class="cards">
         <a class="arrow" href="#">
           <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.21015 10.4594C7.59661 10.8128 7.59661 11.3841 7.21015 11.7349C6.82369 12.0871 6.19929 12.0897 5.81282 11.7349L0.289847 6.63794C-0.0966174 6.28579 -0.0966173 5.71584 0.289847 5.36108L5.81282 0.264109C6.19785 -0.0880364 6.82369 -0.0880364 7.21015 0.264109C7.59662 0.617558 7.59662 1.18882 7.21015 1.53966L2.68073 6.00147L7.21015 10.4594Z" fill="currentColor"></path>
+            <path
+              d="M7.21015 10.4594C7.59661 10.8128 7.59661 11.3841 7.21015 11.7349C6.82369 12.0871 6.19929 12.0897 5.81282 11.7349L0.289847 6.63794C-0.0966174 6.28579 -0.0966173 5.71584 0.289847 5.36108L5.81282 0.264109C6.19785 -0.0880364 6.82369 -0.0880364 7.21015 0.264109C7.59662 0.617558 7.59662 1.18882 7.21015 1.53966L2.68073 6.00147L7.21015 10.4594Z"
+              fill="currentColor"></path>
           </svg>
         </a>
 
-        <div v-if="clothes.pageProps" v-for="c in clothes.pageProps.products.slice(0, 7)" class="card">
+        <div v-if="clothes.pageProps" v-for="c in clothes.pageProps.products.slice(0, 4)" class="card">
           <div class="card_content_wrapper">
             <div class="card_content">
               <a class="card_content_link_img" href="#">
@@ -19,7 +21,8 @@
                 {{ c.node.name }}
               </a>
               <p class="card_price">
-                <span style="text-decoration:line-through;" v-if="c.node.variants[0].pricing.priceUndiscounted.gross.amount !== c.node.variants[0].pricing.price.gross.amount">{{ c.node.variants[0].pricing.priceUndiscounted.gross.amount }}</span>
+                <span style="text-decoration:line-through;"
+                      v-if="c.node.variants[0].pricing.priceUndiscounted.gross.amount !== c.node.variants[0].pricing.price.gross.amount">{{ c.node.variants[0].pricing.priceUndiscounted.gross.amount }}</span>
                 <span>{{ c.node.variants[0].pricing.price.gross.amount }}</span>
                 <span class="text-xs">€</span>
               </p>
@@ -28,7 +31,9 @@
         </div>
         <a class="arrow" href="#">
           <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.289849 1.54064C-0.0966146 1.18719 -0.0966145 0.615928 0.28985 0.265087C0.676314 -0.087058 1.30071 -0.0896664 1.68718 0.265087L7.21015 5.36206C7.59662 5.71421 7.59662 6.28416 7.21015 6.63892L1.68718 11.7359C1.30215 12.088 0.676312 12.088 0.289848 11.7359C-0.0966159 11.3824 -0.0966159 10.8112 0.289848 10.4603L4.81927 5.99853L0.289849 1.54064Z" fill="currentColor"></path>
+            <path
+              d="M0.289849 1.54064C-0.0966146 1.18719 -0.0966145 0.615928 0.28985 0.265087C0.676314 -0.087058 1.30071 -0.0896664 1.68718 0.265087L7.21015 5.36206C7.59662 5.71421 7.59662 6.28416 7.21015 6.63892L1.68718 11.7359C1.30215 12.088 0.676312 12.088 0.289848 11.7359C-0.0966159 11.3824 -0.0966159 10.8112 0.289848 10.4603L4.81927 5.99853L0.289849 1.54064Z"
+              fill="currentColor"></path>
           </svg>
         </a>
       </div>
@@ -40,19 +45,25 @@
 .products {
   background-color: #dbdedb;
   padding: 3rem;
+  overflow: hidden;
 }
 
 .product_title {
   text-transform: uppercase;
   font-size: 32px;
+}
+
+.product_title b {
+  display: block;
   font-weight: bold;
+  font-size: 38px;
 }
 
 .arrow {
   color: inherit;
   text-decoration: inherit;
   padding-right: 1.5rem;
-  display: block;
+  display: none;
 }
 
 .cards_wrapper {
@@ -66,8 +77,9 @@
 .cards {
   display: flex;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
+
 .card {
   margin-bottom: 1.5rem;
   width: 350px;
@@ -86,7 +98,7 @@
   height: 100%;
   border-radius: .875rem;
   --tw-bg-opacity: 1;
-  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
   padding: 1.5rem 2.5rem;
 }
 
@@ -111,7 +123,7 @@
 
 .card_title {
   margin: 0 0 1rem;
-  font-family: Poppins,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: Poppins, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.5rem;
