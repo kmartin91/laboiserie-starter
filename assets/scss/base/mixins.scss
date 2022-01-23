@@ -1,0 +1,21 @@
+@mixin container ($maxWidth: 1920px, $width: 90%) {
+    max-width: $maxWidth;
+    width: $width;
+    margin: 0 auto;
+}
+
+@mixin flex-container($justify: center, $align: center, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin absolute {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
