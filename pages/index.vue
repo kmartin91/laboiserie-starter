@@ -210,7 +210,7 @@
 
     <Hero />
 
-    <div class="showcase showcase-1">
+    <section class="showcase showcase-1">
       <div class="showcase__wrapper">
         <div class="showcase__infos">
           <div class="showcase__infos__title">
@@ -226,9 +226,9 @@
           />
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="showcase showcase-2">
+    <section class="showcase showcase-2">
       <div class="showcase__wrapper">
         <div class="showcase__infos">
           <div class="showcase__infos__title">
@@ -244,7 +244,7 @@
           />
         </div>
       </div>
-    </div>
+    </section>
 
     <Youtube />
 

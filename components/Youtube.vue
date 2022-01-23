@@ -1,5 +1,5 @@
 <template>
-  <div class="last-youtube-video">
+  <section class="last-youtube-video">
     <div class="last-youtube-video__video-wrapper">
       <h2 class="last-youtube-video__title">Ma dernière vidéo :</h2>
       <iframe
@@ -11,5 +11,5 @@
         allowfullscreen
       ></iframe>
     </div>
-  </div>
+  </section>
 </template>
