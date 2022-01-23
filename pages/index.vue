@@ -194,7 +194,6 @@
         <div class="header__cart-btn">
           <a href="#">
             <svg
-              version="1.1"
               viewBox="0 0 752 752"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -268,7 +267,6 @@
           height="315"
           src="https://www.youtube.com/embed/WzazpfnQ-N8?controls=0"
           title="YouTube video player"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
