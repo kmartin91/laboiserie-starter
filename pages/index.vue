@@ -246,6 +246,7 @@
       </div>
     </section>
 
+    <Products />
     <Youtube />
 
     <Footer />
