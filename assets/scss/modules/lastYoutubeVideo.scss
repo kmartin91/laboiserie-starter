@@ -1,0 +1,24 @@
+.last-youtube-video {
+  max-width: 1920px;
+  width: 100%;
+  margin: 10rem auto;
+  margin-bottom: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__video-wrapper {
+    position: relative;
+  }
+  &__title {
+    background: $primary;
+    color: $text;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    position: absolute;
+    transform: rotate(-20deg);
+    left: -5rem;
+    top: -2rem;
+    box-shadow: 0.5rem 0.5rem 0.9rem rgb(0 0 0 / 28%);
+  }
+}

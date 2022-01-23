@@ -1,68 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 
 .showcase {
-    background-color: #dbdedb;
+  background-color: #dbdedb;
 
-    &.showcase-1 {
-        .showcase__infos__title {
-            font-family: 'Great Vibes', cursive;
+  &.showcase {
+    .showcase__infos__title {
+      font-family: "Great Vibes", cursive;
 
-            span {
-                display: block;
-                padding: 0 15px;
+      span {
+        display: block;
+        padding: 0 15px;
 
-                &:last-child {
-                    margin-left: 30px;
-                }
-            }
+        &:last-child {
+          margin-left: 30px;
         }
+      }
     }
+  }
+  &-2 {
+    color: #fff;
+    background: #ac0123;
+    .showcase__wrapper {
+      flex-direction: row-reverse;
+    }
+    .showcase__infos__title {
+      color: #fff;
+    }
+  }
 }
 
 .showcase__wrapper {
-    @include container;
-    @include flex-container;
+  @include container;
+  @include flex-container;
 }
 
 .showcase__infos {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 100%;
 }
 
 .showcase__infos__title {
-    color: #aa0021;
-    font-size: 70px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
+  color: #aa0021;
+  font-size: 70px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
 }
 
 .showcase__infos__cta {
-    display: flex;
-    padding: 15px 60px;
-    background-color: $primary;
-    border: 2px solid $primary;
-    text-decoration: none;
-    border-radius: 40px;
-    color: #fff;
-    transition: $timing ease all;
-    text-transform: uppercase;
-    font-weight: bold;
-    align-self: center;
-    margin-top: 15px;
+  display: flex;
+  padding: 15px 60px;
+  background-color: $primary;
+  border: 2px solid $primary;
+  text-decoration: none;
+  border-radius: 40px;
+  color: #fff;
+  transition: $timing ease all;
+  text-transform: uppercase;
+  font-weight: bold;
+  align-self: center;
+  margin-top: 15px;
 
-    &:hover {
-        background-color: #150202;
-        border-color: #150202;
-    }
+  &:hover {
+    background-color: #150202;
+    border-color: #150202;
+  }
 }
 
 .showcase__image {
-    display: flex;
+  display: flex;
 
-    img {
-        width: 600px;
-    }
+  img {
+    width: 600px;
+  }
 }
