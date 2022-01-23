@@ -259,49 +259,8 @@
 import feather from "feather-icons";
 export default {
   name: "IndexPage",
-  data() {
-    return {
-      accessories: [],
-      clothes: [],
-      stickers: [],
-      watches: [],
-      wheelchairs: [],
-      cross: [],
-      contest: [],
-    };
-  },
-  async fetch() {
-    this.accessories = await fetch(
-      "https://la-boiserie.fr/_next/data/Rw8sEjLiaAlmAipHCg0Oc/accessoires.json"
-    ).then((res) => res.json());
-
-    this.clothes = await fetch(
-      "https://la-boiserie.fr/_next/data/Rw8sEjLiaAlmAipHCg0Oc/vetements.json"
-    ).then((res) => res.json());
-
-    this.stickers = await fetch(
-      "https://la-boiserie.fr/_next/data/Rw8sEjLiaAlmAipHCg0Oc/stickers.json"
-    ).then((res) => res.json());
-
-    this.watches = await fetch(
-      "https://la-boiserie.fr/_next/data/Rw8sEjLiaAlmAipHCg0Oc/montres.json"
-    ).then((res) => res.json());
-
-    this.wheelchairs = await fetch(
-      "https://la-boiserie.fr/_next/data/Rw8sEjLiaAlmAipHCg0Oc/draisiennes.json"
-    ).then((res) => res.json());
-
-    this.cross = await fetch(
-      "https://la-boiserie.fr/_next/data/Rw8sEjLiaAlmAipHCg0Oc/cross.json"
-    ).then((res) => res.json());
-
-    this.contest = await fetch(
-      "https://la-boiserie.fr/_next/data/Rw8sEjLiaAlmAipHCg0Oc/contest.json"
-    ).then((res) => res.json());
-  },
   mounted() {
     feather.replace();
-    console.log(this.contest);
 
     // add class on the header when scroll
     window.addEventListener("scroll", () => {
