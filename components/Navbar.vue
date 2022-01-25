@@ -174,8 +174,7 @@ export default {
   },
   methods: {
     toggleMenu: function() {
-      console.log("clicked")
-       this.isActive = !this.isActive;
+       this.isActive = !this.isActive
     }
   }
 }
