@@ -1,68 +1,99 @@
 .hero {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
-    &:before {
-        z-index: 2;
-        @include absolute;
-        background-image: linear-gradient(
-                        22.5deg, rgba(#000, 0.35) 25%, transparent 25%, transparent 50%, rgba(#000, 0.35) 50%, rgba(#000, 0.35) 75%, transparent 75%, transparent);
-        background-size: 1px 1px;
-    }
+  &:before {
+    z-index: 2;
+    @include absolute;
+    background-image: linear-gradient(
+      22.5deg,
+      rgba(#000, 0.35) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(#000, 0.35) 50%,
+      rgba(#000, 0.35) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 1px 1px;
+  }
 
-    &:after {
-        @include absolute;
-        background: linear-gradient(221deg, rgba(0, 0, 0, 0) 0%, rgba(#000000, 60%) 71.34%);
-    }
+  &:after {
+    @include absolute;
+    background: linear-gradient(
+      221deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(#000000, 60%) 71.34%
+    );
+  }
 
-    video {
-        filter: contrast(1.2);
-        margin-bottom: -4px;
-        object-fit: cover;
-        width: 130%;
+  video {
+    filter: contrast(1.2);
+    margin-bottom: -4px;
+    object-fit: cover;
+    width: 150%;
+
+    @include md {
+      width: 130%;
     }
+  }
 }
 
 .hero__wrapper {
-    @include absolute;
-    z-index: 3;
-    color: #fff;
+  @include absolute;
+  z-index: 3;
+  color: #fff;
 }
 
 .hero__wrapper__content {
-    @include container;
-    @include flex-container(center, flex-start, column);
+  min-height: 350px;
+
+  @include container;
+  @include flex-container(center, flex-start, column);
+
+  @include md {
+    min-height: 400px;
+  }
+
+  @include lg {
     min-height: 100%;
+  }
 }
 
 .hero__title {
-    margin: 0 0 40px;
-    text-transform: uppercase;
-    font-weight: lighter;
-    font-size: 40px;
-    line-height: 1.1;
+  margin: 0 0 40px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 24px;
 
-    b {
-        display: block;
-        font-weight: bold;
-    }
+  @include md {
+    font-size: 32px;
+  }
+
+  @include lg {
+    font-size: 40px;
+  }
+
+  line-height: 1.1;
+
+  b {
+    display: block;
+    font-weight: bold;
+  }
 }
 
 .hero__button {
-    padding: 15px 60px;
-    background-color: $primary;
-    border: 2px solid $primary;
-    text-decoration: none;
-    border-radius: 40px;
-    color: #fff;
-    transition: $timing ease all;
-    text-transform: uppercase;
-    font-weight: bold;
+  padding: 15px 60px;
+  background-color: $primary;
+  border: 2px solid $primary;
+  text-decoration: none;
+  border-radius: 40px;
+  color: #fff;
+  transition: $timing ease all;
+  text-transform: uppercase;
+  font-weight: bold;
 
-    &:hover {
-        background-color: transparent;
-    }
+  &:hover {
+    background-color: transparent;
+  }
 }
-
-
-
