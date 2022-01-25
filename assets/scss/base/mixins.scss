@@ -1,21 +1,43 @@
-@mixin container ($maxWidth: 1920px, $width: 90%) {
-    max-width: $maxWidth;
-    width: $width;
-    margin: 0 auto;
+@mixin container($maxWidth: 1920px, $width: 90%) {
+  max-width: $maxWidth;
+  width: $width;
+  margin: 0 auto;
 }
 
 @mixin flex-container($justify: center, $align: center, $direction: row) {
-    display: flex;
-    justify-content: $justify;
-    align-items: $align;
-    flex-direction: $direction;
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
 }
 
 @mixin absolute {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+
+@mixin sm {
+  @media (max-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
 }

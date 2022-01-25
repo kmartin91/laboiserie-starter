@@ -8,6 +8,11 @@
   justify-content: center;
   &__video-wrapper {
     position: relative;
+    width: 100%;
+
+    @include md {
+      width: 560px;
+    }
   }
   &__title {
     background: $primary;
@@ -16,9 +21,14 @@
     font-size: 1.5rem;
     text-transform: uppercase;
     position: absolute;
-    transform: rotate(-20deg);
-    left: -5rem;
-    top: -2rem;
     box-shadow: 0.5rem 0.5rem 0.9rem rgb(0 0 0 / 28%);
+    left: 1rem;
+    top: -5rem;
+
+    @include md {
+      transform: rotate(-20deg);
+      left: -5rem;
+      top: -2rem;
+    }
   }
 }
