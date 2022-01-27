@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{}],fetch:{"IndexPage:0":{_error:{message:"invalid json response body at https:\u002F\u002Fla-boiserie.fr\u002F_next\u002Fdata\u002FRw8sEjLiaAlmAipHCg0Oc\u002Faccessoires.json reason: Unexpected token \u003C in JSON at position 0",type:"invalid-json",statusCode:500}}},mutations:void 0});
