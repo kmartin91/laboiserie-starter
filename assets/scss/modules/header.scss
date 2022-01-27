@@ -5,8 +5,6 @@ $spacer: 1rem;
 $linkHeight: $spacer * 3.5;
 $timing: 250ms;
 $linkWidth: 6rem;
-$animation-duration: 0.5s;
-$animation-fill-mode: forwards;
 
 .header {
   $ref: &;
@@ -14,9 +12,11 @@ $animation-fill-mode: forwards;
   top: 0;
   left: 0;
   right: 0;
+  //background: rgba(0, 0, 0, 0.9);
   color: $text;
   padding: 0 $spacer * 2;
   background: linear-gradient(360deg, transparent, rgba(#000000, 60%) 71.34%);
+  //box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
   height: 6rem;
   display: flex;
   align-items: center;
@@ -47,65 +47,10 @@ $animation-fill-mode: forwards;
   overflow: hidden;
 
   &__menu {
-    position: fixed;
-    bottom: 0;
-    background-color: #222;
-    left: 0;
+    position: relative;
     display: flex;
     list-style: none;
     padding: 0;
-    width: 100%;
-    justify-content: space-around;
-
-    @include lg {
-      position: relative;
-      bottom: auto;
-      background-color: transparent;
-      left: auto;
-      width: auto;
-      justify-content: baseline;
-    }
-  }
-
-  &__accordions {
-    background-color: #383838;
-    flex-direction: column;
-    position: fixed;
-    bottom: 55px;
-    transform: scaleY(0);
-    overflow: hidden;
-    transition: transform 0.5s ease-in-out;
-    transform-origin: bottom;
-    width: 100%;
-    z-index: 3;
-
-    &__link {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      height: $linkHeight;
-      color: $text;
-      text-decoration: none;
-      text-transform: uppercase;
-      gap: 0.6rem;
-      margin: 0 32px;
-    }
-
-    &__menu {
-      & > * {
-        border-bottom: 1px solid #fff;
-      }
-    }
-
-    &_open {
-      transform: scaleY(1);
-      transition: transform 0.5s ease-in-out;
-      transform-origin: bottom;
-
-      @include lg {
-        display: none;
-      }
-    }
   }
 
   &__link {
@@ -122,49 +67,6 @@ $animation-fill-mode: forwards;
     width: 8rem;
     text-transform: uppercase;
     transition: 500ms ease all;
-
-    &_more {
-      &::before,
-      &::after {
-        background: #fff;
-        border-radius: 5px;
-        content: "";
-        position: absolute;
-        height: 4px;
-        width: 24px;
-        transition: all 0.5s ease-in-out;
-      }
-
-      &::before {
-        transform: rotate(90deg);
-      }
-
-      &_open {
-        &::before {
-          animation-name: first;
-          animation-duration: $animation-duration;
-          animation-fill-mode: $animation-fill-mode;
-        }
-        &::after {
-          animation-name: second;
-          animation-duration: $animation-duration;
-          animation-fill-mode: $animation-fill-mode;
-        }
-      }
-
-      &_closed {
-        &::before {
-          animation-name: first-reverse;
-          animation-duration: $animation-duration;
-          animation-fill-mode: $animation-fill-mode;
-        }
-        &::after {
-          animation-name: second-reverse;
-          animation-duration: $animation-duration;
-          animation-fill-mode: $animation-fill-mode;
-        }
-      }
-    }
 
     svg {
       height: 23px;
@@ -194,63 +96,43 @@ $animation-fill-mode: forwards;
   }
 
   &__item {
-    &:nth-child(n + 4) {
-      display: none;
-    }
-
-    @include lg {
-      &:nth-child(n + 5) {
-        display: flex;
-      }
-    }
-
-    &_more {
-      display: flex;
-
-      @include lg {
-        display: none;
-      }
-    }
-
-    @include lg {
-      &:last-child {
-        &:before {
-          content: "";
-          position: absolute;
-          left: -8rem;
-          margin-left: 3.9rem;
-          bottom: -1.25rem;
-          height: 0.5rem;
-          width: 2px;
-          background: red;
-          $speedlineColor: rgba(#fff, 0.2);
-          $speedGap: 3rem;
-          $shadow: 0 -0.5rem $primary, 0 -0.5rem $primary,
-            0 0 $speedGap 0.5rem $primary, 2rem 0 0 $speedlineColor,
-            -$speedGap 0 0 $speedlineColor;
-          @for $i from 2 to 120 {
-            $shadow: $shadow + #{","} + $i * $speedGap 0 0 $speedlineColor;
-            $shadow: $shadow + #{","} + $i * -$speedGap 0 0 $speedlineColor;
-          }
-          box-shadow: $shadow;
-          transition: 500ms ease all;
+    &:last-child {
+      &:before {
+        content: "";
+        position: absolute;
+        left: -8rem;
+        margin-left: 3.9rem;
+        bottom: -1.25rem;
+        height: 0.5rem;
+        width: 2px;
+        background: red;
+        $speedlineColor: rgba(#fff, 0.2);
+        $speedGap: 3rem;
+        $shadow: 0 -0.5rem $primary, 0 -0.5rem $primary,
+          0 0 $speedGap 0.5rem $primary, 2rem 0 0 $speedlineColor,
+          -$speedGap 0 0 $speedlineColor;
+        @for $i from 2 to 120 {
+          $shadow: $shadow + #{","} + $i * $speedGap 0 0 $speedlineColor;
+          $shadow: $shadow + #{","} + $i * -$speedGap 0 0 $speedlineColor;
         }
+        box-shadow: $shadow;
+        transition: 500ms ease all;
       }
+    }
 
-      @for $i from 1 to 12 {
-        &:first-child:nth-last-child(#{$i}),
-        &:first-child:nth-last-child(#{$i}) ~ li {
-          @for $j from 1 to $i {
-            &:nth-child(#{$j}):hover {
-              ~ li:last-child:before {
-                left: calc(calc(100% / $i) * calc($j - 1));
-              }
+    @for $i from 1 to 12 {
+      &:first-child:nth-last-child(#{$i}),
+      &:first-child:nth-last-child(#{$i}) ~ li {
+        @for $j from 1 to $i {
+          &:nth-child(#{$j}):hover {
+            ~ li:last-child:before {
+              left: (100% / $i) * ($j - 1);
             }
           }
+        }
 
-          &:last-child:hover:before {
-            left: calc((100% / $i) * calc($i - 1));
-          }
+        &:last-child:hover:before {
+          left: (100% / $i) * ($i - 1);
         }
       }
     }
@@ -270,12 +152,8 @@ $animation-fill-mode: forwards;
   svg {
     fill: $text;
     display: inline;
-    aspect-ratio: 1;
-    width: 24px;
-
-    @include md {
-      width: 30px;
-    }
+    height: 30px;
+    width: 30px;
   }
 }
 
@@ -284,13 +162,9 @@ $animation-fill-mode: forwards;
   position: relative;
 
   svg {
-    width: 80px;
+    height: 110px;
+    width: 130px;
     transform: scaleX(-1) translateY(3px);
-
-    @include md {
-      height: 110px;
-      width: 130px;
-    }
   }
 
   &::after {
@@ -298,56 +172,14 @@ $animation-fill-mode: forwards;
     position: absolute;
     left: 50%;
     top: calc(50% - 10px);
-    transform: translateY(-50%) translateX(-26px);
+    transform: translateY(-50%) translateX(-32px);
     content: "1";
     border-radius: 50%;
     background-color: $primary;
-    aspect-ratio: 1;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
     text-align: center;
     font-weight: bold;
-    width: 18px;
-    line-height: 18px;
-
-    @include md {
-      transform: translateY(-50%) translateX(-32px);
-      line-height: 25px;
-      width: 25px;
-    }
-  }
-}
-
-@keyframes first {
-  from {
-    transform: rotate(90deg);
-  }
-  to {
-    transform: rotate(135deg);
-  }
-}
-
-@keyframes second {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(45deg);
-  }
-}
-
-@keyframes firstreverse {
-  from {
-    transform: rotate(135deg);
-  }
-  to {
-    transform: rotate(90deg);
-  }
-}
-
-@keyframes secondreverse {
-  from {
-    transform: rotate(45deg);
-  }
-  to {
-    transform: rotate(0);
   }
 }

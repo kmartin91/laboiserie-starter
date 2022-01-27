@@ -6,6 +6,7 @@ $footerText: #fff;
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .footer {
@@ -15,10 +16,15 @@ $footerText: #fff;
   background: $footerBg;
 
   &__columns {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    justify-content: center;
+    width: 100%;
+
+    @include md {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   &__col {
@@ -28,9 +34,15 @@ $footerText: #fff;
       text-transform: uppercase;
       display: flex;
       align-items: center;
+      flex-direction: column;
+      gap: 8px;
+      justify-content: center;
 
-      @include lg {
+      @include md {
+        flex-direction: row;
+        gap: 0;
         font-size: 1.6rem;
+        justify-content: baseline;
       }
 
       * ~ span {
@@ -68,6 +80,7 @@ $footerText: #fff;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+      align-items: center;
     }
   }
 

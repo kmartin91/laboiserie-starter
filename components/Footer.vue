@@ -97,7 +97,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data: function () {
+    return {
+      isActive: false
+    }
+  },
+  methods: {
+    toggleMenu: function() {
+       this.isActive = !this.isActive
+    }
+  }
+}
 </script>
 
 <style lang="scss">
